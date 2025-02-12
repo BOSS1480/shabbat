@@ -1,10 +1,11 @@
-# בחר תמונת בסיס של PHP עם תומך ב-CLI
+# בחר תמונת בסיס של PHP
 FROM php:8.0-cli
 
-# התקנת תלות של cURL ו-Composer
+# התקנת תלות cURL, git ו-Composer
 RUN apt-get update && apt-get install -y \
     git \
     unzip \
+    libcurl4-openssl-dev \
     && curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer \
     && docker-php-ext-install curl
 
