@@ -1,18 +1,17 @@
-FROM php:8.0-cli
+# השתמש בתמונה של PHP עם Apache
+FROM php:8.0-apache
 
-RUN apt-get update && apt-get install -y \
-    git \
-    unzip \
-    libcurl4-openssl-dev \
-    && curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer \
-    && docker-php-ext-install curl
+# התקנת Composer
+COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
-COPY . /app
+# העתקת הקבצים שלך לתוך התמונה
+COPY . /var/www/html/
 
-WORKDIR /app
+# התקנת התלותות של Composer
+RUN composer install --no-dev --optimize-autoloader
 
-RUN if [ -f composer.json ]; then composer install; fi
+# חשיפת הפורט
+EXPOSE 80
 
-COPY .env /app/.env
-
-CMD ["php", "-S", "0.0.0.0:8080", "bot.php"]
+# הגדרת הפקודה להפעלת Apache
+CMD ["apache2-foreground"]
