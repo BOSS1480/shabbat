@@ -1,5 +1,4 @@
-# השתמש בתמונה של PHP עם Apache
-FROM php:8.0-apache
+FROM php:8.2-apache
 
 # התקנת Composer
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
