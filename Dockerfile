@@ -22,4 +22,4 @@ RUN composer install --no-dev --optimize-autoloader
 EXPOSE 80
 
 # הגדרת הפקודה להפעלת Apache
-CMD ["php", "bot.php"]
+CMD ["apache2-foreground"]
