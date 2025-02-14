@@ -91,8 +91,8 @@ if($username == null){
 $username = "null";
 }
 
-$txtbot = "היי <a href='mention:$senderid'>$first_name</a>, ברוך הבא 👋
-הרובוט שישמור את השבת בקבוצה שלך!";
+$txtbot = "<b>היי <a href='mention:$senderid'>$first_name</a>, ברוך הבא 👋
+הרובוט שישמור את השבת בקבוצה שלך!</b>";
 
 $bot_API_markup = ['inline_keyboard' => 
     [
@@ -103,14 +103,11 @@ $bot_API_markup = ['inline_keyboard' =>
 ['text'=>"מידע 💬",'callback_data'=>"מידע"],['text'=>"פקודות 💡",'callback_data'=>"כלהפקודות"]				   
                     ],
                     [		
-['text'=>"הוסף אותי לקבוצה ➕",'url'=>"https://t.me/ShabatRobot?startgroup"]				   
+['text'=>"הוסף אותי לקבוצה ➕",'url'=>"https://t.me/shomer_shabbat_bot?startgroup"]				   
                     ],
                     [	
-['text'=>"קבוצת תמיכה 👥",'url'=>"https://t.me/theisraelisgroup"],['text'=>"📣 ערוץ עדכונים 📣",'url'=>"https://t.me/theisraelisbackup"]	
+['text'=>"קבוצת תמיכה 👥",'url'=>"https://t.me/+qn1oVKhkA3RlZmQ0"],['text'=>"📣 ערוץ עדכונים 📣",'url'=>"https://t.me/bot_sratim_sdarot"]	
                     ],
-                    [	
-['text'=>"מבית הישראלים 🇮🇱",'url'=>"https://t.me/the_israelis"]					
-        ]
     ]
 ];
 $inputReplyToMessage = ['_' => 'inputReplyToMessage', 'reply_to_msg_id' => $messageid];
@@ -149,14 +146,11 @@ $bot_API_markup = ['inline_keyboard' =>
 ['text'=>"מידע 💬",'callback_data'=>"מידע"],['text'=>"פקודות 💡",'callback_data'=>"כלהפקודות"]				   
                     ],
                     [		
-['text'=>"הוסף אותי לקבוצה ➕",'url'=>"https://t.me/ShabatRobot?startgroup"]				   
+['text'=>"הוסף אותי לקבוצה ➕",'url'=>"https://t.me/shomer_shabbat_bot?startgroup"]				   
                     ],
                     [						  
-['text'=>"קבוצת תמיכה 👥",'url'=>"https://t.me/theisraelisgroup"],['text'=>"📣 ערוץ עדכונים 📣",'url'=>"https://t.me/theisraelisbackup"]	
+['text'=>"קבוצת תמיכה 👥",'url'=>"https://t.me/+qn1oVKhkA3RlZmQ0"],['text'=>"📣 ערוץ עדכונים 📣",'url'=>"https://t.me/bot_sratim_sdarot"]	
                     ],
-                    [	
-['text'=>"מבית הישראלים 🇮🇱",'url'=>"https://t.me/the_israelis"]					
-        ]
     ]
 ];
 
@@ -412,7 +406,7 @@ $txtbot = "<b>הרובוט שישמור את השבת בקבוצה שלך!</b>
 $bot_API_markup = ['inline_keyboard' => 
     [
         [
-['text'=>"הוסף אותי לקבוצה ➕",'url'=>"https://t.me/ShabatRobot?startgroup"]				   
+['text'=>"הוסף אותי לקבוצה ➕",'url'=>"https://t.me/shomer_shabbat_bot?startgroup"]				   
                     ],
                     [	
 ['text'=>"חזרה",'callback_data'=>"חזרה"]				   
@@ -668,7 +662,7 @@ $zmanim = "⌚️ <u><b>זמני כניסת ויציאת השבת:</b></u>
 
 $bot_API_markup = ['inline_keyboard' => [
                                         [
-['text'=>"מבית הישראלים 🇮🇱",'url'=>"https://t.me/the_israelis"]
+['text'=>"➕ הוסף אותי לקבוצה שלך",'url'=>"https://t.me/shomer_shabbat_bot?startgroup"]
     ]
   ]
 ];
@@ -871,7 +865,7 @@ $zmanim = "⌚️ זמני כניסת ויציאת השבת:
 
 $bot_API_markup = ['inline_keyboard' => [
                                         [
-['text'=>"מבית הישראלים 🇮🇱",'url'=>"https://t.me/the_israelis"]
+['text'=>"➕ הוסף אןתי לקבוצה שלך",'url'=>"https://t.me/shomer_shabbat_bot?startgroup"]
     ]
   ]
 ];
@@ -1303,7 +1297,7 @@ $bot_API_markup[] = [['text'=>"סגור ✖️",'callback_data'=>"סגור"]];
 $bot_API_markup = [ 'inline_keyboard'=> $bot_API_markup,];
 $this->messages->sendMessage(peer: $senderid, message: "$txtbot2", reply_markup: $bot_API_markup, parse_mode: 'HTML');
 $txtbot = "<b>פאנל ההגדרות נשלח אליך בהודעה פרטית.</b>";
-$bot_API_markup2[] = [['text'=>"לחץ כאן למעבר ⚙️",'url'=>"https://t.me/ShabatRobot"]];
+$bot_API_markup2[] = [['text'=>"לחץ כאן למעבר ⚙️",'url'=>"https://t.me/shomer_shabbat_bot"]];
 $bot_API_markup2 = [ 'inline_keyboard'=> $bot_API_markup2,];
 $this->messages->sendMessage(peer: $message->chatId, message: "$txtbot", reply_markup: $bot_API_markup2, parse_mode: 'HTML');
 Amp\File\write("data/$senderid/groupid.txt", "$chatid");
