@@ -22,4 +22,4 @@ RUN composer install --no-dev --optimize-autoloader
 EXPOSE 80
 
 # הגדרת הפקודה להפעלת Apache
-CMD ["php", "/var/www/html/bot.php"]
+CMD ["php", "bot.php"]
